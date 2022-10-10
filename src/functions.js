@@ -5,3 +5,12 @@ async function getWeatherData(location) {
   const response = await fetch(locationURL, { mode: "cors" });
   return response;
 }
+
+// Processes the JSON data
+async function processJSON() {
+  const weatherData = await getWeatherData("austin, texas");
+  const weatherJSON = await weatherData.json();
+  console.log(weatherJSON);
+}
+
+export { processJSON };
