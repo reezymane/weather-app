@@ -1,3 +1,5 @@
+import { weatherObject } from "./factories";
+
 // Returns weather data promise from API
 async function getWeatherData(location) {
   const locationString = location.split(" ").join("");
@@ -10,7 +12,19 @@ async function getWeatherData(location) {
 async function processJSON() {
   const weatherData = await getWeatherData("austin, texas");
   const weatherJSON = await weatherData.json();
-  console.log(weatherJSON);
+
+  // Store data into weatherObject
+  weatherObject.name = weatherJSON.name;
+  weatherObject.temp = weatherJSON.main.temp;
+  weatherObject.hi = weatherJSON.main.temp_max;
+  weatherObject.lo = weatherJSON.main.temp_min;
+  weatherObject.humidity = weatherJSON.main.humidity;
+  weatherObject.feelsLike = weatherJSON.main.feels_like;
+  weatherObject.weather = weatherJSON.weather[0].main;
+  weatherObject.windSpeed = weatherJSON.wind.speed;
+  weatherObject.dateTime = weatherJSON.dt;
+  weatherObject.sunrise = weatherJSON.sys.sunrise;
+  weatherObject.sunset = weatherJSON.sys.sunset;
 }
 
 export { processJSON };
