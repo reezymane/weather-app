@@ -1,0 +1,3 @@
+const weatherObject = {};
+
+export { weatherObject };
