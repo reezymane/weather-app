@@ -1,5 +1,10 @@
 import { weatherObject } from "./factories";
 
+const clearForm = () => {
+  const searchBar = document.querySelector("#searchBar");
+  searchBar.reset();
+};
+
 const displayCity = () => {
   const dataDiv = document.querySelector("#dataDiv");
   const cityName = document.createElement("p");
@@ -8,6 +13,7 @@ const displayCity = () => {
 };
 
 const displayData = () => {
+  clearForm();
   displayCity();
 };
 
