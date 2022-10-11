@@ -93,6 +93,7 @@ const displayData = () => {
 
   // Displays current temperature and unit buttons
   const displayTemp = () => {
+    const tempUnitDiv = document.createElement("div");
     const tempDiv = document.createElement("div");
     const unitDiv = document.createElement("div");
     const temp = document.createElement("p");
@@ -111,8 +112,9 @@ const displayData = () => {
 
     fahrenheitButton.style.fontWeight = "bold";
 
-    dataDiv.appendChild(tempDiv);
-    dataDiv.appendChild(unitDiv);
+    dataDiv.appendChild(tempUnitDiv);
+    tempUnitDiv.appendChild(tempDiv);
+    tempUnitDiv.appendChild(unitDiv);
     tempDiv.appendChild(temp);
     unitDiv.appendChild(fahrenheitButton);
     unitDiv.appendChild(slash);
@@ -140,12 +142,27 @@ const displayData = () => {
     });
   };
 
+  // Displays feelsLike temp
+  const displayFeelsLike = () => {
+    const feelsLike = document.createElement("p");
+    feelsLike.setAttribute("id", "feelsLike");
+
+    feelsLike.textContent = `Feels Like: ${fahrenheit(
+      weatherObject.feelsLike
+    )}\u00B0`;
+
+    dataDiv.appendChild(feelsLike);
+  };
+
   clearForm();
   displayCity();
   displayTime();
   displayWeatherPic();
   displayTemp();
   convertUnitButtons();
+  displayFeelsLike();
+
+  console.log(weatherObject);
 };
 
 export { displayData };
