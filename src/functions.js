@@ -12,8 +12,6 @@ async function getWeatherData(city) {
     // Store data into weatherObject
     weatherObject.name = weatherJSON.name;
     weatherObject.temp = weatherJSON.main.temp;
-    weatherObject.hi = weatherJSON.main.temp_max;
-    weatherObject.lo = weatherJSON.main.temp_min;
     weatherObject.humidity = weatherJSON.main.humidity;
     weatherObject.feelsLike = weatherJSON.main.feels_like;
     weatherObject.weather = weatherJSON.weather[0].main;
