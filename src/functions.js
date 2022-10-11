@@ -1,4 +1,5 @@
 import { weatherObject } from "./factories";
+import { displayData } from "./DOM";
 
 // Returns weather data promise from API
 async function getWeatherData(city) {
@@ -20,6 +21,9 @@ async function getWeatherData(city) {
     weatherObject.dateTime = weatherJSON.dt;
     weatherObject.sunrise = weatherJSON.sys.sunrise;
     weatherObject.sunset = weatherJSON.sys.sunset;
+
+    // Display weather data
+    displayData();
   } catch (error) {
     console.log("ENTER NEW CITY FOO!");
   }
