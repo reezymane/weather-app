@@ -5,7 +5,6 @@ import Moonclouds from "./img/moonclouds.png";
 import Rain from "./img/rain.png";
 import Snow from "./img/snow.png";
 import Sunclouds from "./img/sunclouds.png";
-import Sunny from "./img/sunny.jpg";
 
 // Runs functions to display all data
 const displayData = () => {
