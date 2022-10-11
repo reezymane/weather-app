@@ -1,4 +1,4 @@
-import { fromUnixTime } from "date-fns";
+import { fromUnixTime, utcToZonedTime } from "date-fns";
 import { weatherObject } from "./factories";
 import Cloudy from "./img/cloudy.png";
 import Moonclouds from "./img/moonclouds.png";
@@ -33,7 +33,59 @@ const displayTime = () => {
 // Displays appropriate weather pic depending on weather condiditons
 const displayWeatherPic = () => {
   const dataDiv = document.querySelector("#dataDiv");
-  const weatherPic = document.createElement("img");
+
+  const currentDT = fromUnixTime(weatherObject.dateTime);
+  const nightStart = fromUnixTime(weatherObject.sunset);
+  const nightEnd = fromUnixTime(weatherObject.sunrise);
+
+  // If it's day time and clear
+  if (
+    currentDT <= nightStart &&
+    currentDT > nightEnd &&
+    weatherObject.weather === "Clear"
+  ) {
+    const mySunclouds = new Image();
+    mySunclouds.src = Sunclouds;
+    dataDiv.appendChild(mySunclouds);
+
+    // If it's day time and cloudy
+  } else if (
+    currentDT <= nightStart &&
+    currentDT > nightEnd &&
+    weatherObject.weather === "Clouds"
+  ) {
+    const myCloudy = new Image();
+    myCloudy.src = Cloudy;
+    dataDiv.appendChild(myCloudy);
+
+    // If it's day time and raining
+  } else if (
+    currentDT <= nightStart &&
+    currentDT > nightEnd &&
+    (weatherObject.weather === "Thunderstorm" ||
+      weatherObject.weather === "Drizzle" ||
+      weatherObject.weather === "Rain")
+  ) {
+    const myRain = new Image();
+    myRain.src = Rain;
+    dataDiv.appendChild(myRain);
+
+    // If it's day time and snowing
+  } else if (
+    currentDT <= nightStart &&
+    currentDT > nightEnd &&
+    weatherObject.weather === "Snow"
+  ) {
+    const mySnow = new Image();
+    mySnow.src = Snow;
+    dataDiv.appendChild(mySnow);
+
+    // If it's night time
+  } else if (currentDT >= nightStart && currentDT < nightEnd) {
+    const myMoonclouds = new Image();
+    myMoonclouds.src = Moonclouds;
+    dataDiv.appendChild(myMoonclouds);
+  }
 };
 
 // Runs functions to display all data
@@ -41,6 +93,7 @@ const displayData = () => {
   clearForm();
   displayCity();
   displayTime();
+  displayWeatherPic();
 };
 
 export { displayData };
