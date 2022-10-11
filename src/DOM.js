@@ -285,7 +285,25 @@ const displayData = () => {
   displayWindSpeed();
 };
 
-const displayError = () => {};
+const displayError = () => {
+  const errorDiv = document.querySelector("#errorDiv");
+  const errorText = document.createElement("p");
+  const correctionText = document.createElement("p");
+
+  errorText.textContent = "Location not found.";
+  correctionText.textContent =
+    'Search must be in the form of "City", "City, State" or "City, Country".';
+
+  errorDiv.appendChild(errorText);
+  errorDiv.appendChild(correctionText);
+};
+
+const removeError = () => {
+  const errorDiv = document.querySelector("#errorDiv");
+  while (errorDiv.firstChild) {
+    errorDiv.removeChild(errorDiv.firstChild);
+  }
+};
 
 const removeInfo = () => {
   const dataDiv = document.querySelector("#dataDiv");
@@ -294,4 +312,4 @@ const removeInfo = () => {
   }
 };
 
-export { displayData, displayError, removeInfo };
+export { displayData, displayError, removeInfo, removeError };
