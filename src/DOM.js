@@ -285,4 +285,13 @@ const displayData = () => {
   displayWindSpeed();
 };
 
-export { displayData };
+const displayError = () => {};
+
+const removeInfo = () => {
+  const dataDiv = document.querySelector("#dataDiv");
+  while (dataDiv.firstChild) {
+    dataDiv.removeChild(dataDiv.firstChild);
+  }
+};
+
+export { displayData, displayError, removeInfo };
