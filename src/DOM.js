@@ -31,6 +31,8 @@ const displayData = () => {
   const displayTime = () => {
     const time = document.createElement("p");
 
+    time.classList.add("time");
+
     time.textContent = new Date().toLocaleTimeString();
     dataDiv.appendChild(time);
   };
@@ -154,6 +156,29 @@ const displayData = () => {
     dataDiv.appendChild(feelsLike);
   };
 
+  // Displays sunrise time
+  const displaySunrise = () => {
+    const moreInfo = document.createElement("div");
+    const sunriseDiv = document.createElement("div");
+    const sunriseTitle = document.createElement("p");
+    const sunriseTime = document.createElement("p");
+
+    moreInfo.setAttribute("id", "moreInfo");
+    sunriseTitle.classList.add("infoTitle");
+    sunriseTime.classList.add("time");
+
+    sunriseTitle.textContent = "Sunrise:";
+    sunriseTime.textContent = fromUnixTime(
+      weatherObject.sunrise
+    ).toLocaleTimeString();
+
+    dataDiv.appendChild(moreInfo);
+    moreInfo.appendChild(sunriseDiv);
+    sunriseDiv.appendChild(sunriseTitle);
+    sunriseDiv.appendChild(sunriseTime);
+    console.log(fromUnixTime(weatherObject.sunrise).toLocaleTimeString());
+  };
+
   clearForm();
   displayCity();
   displayTime();
@@ -161,6 +186,7 @@ const displayData = () => {
   displayTemp();
   convertUnitButtons();
   displayFeelsLike();
+  displaySunrise();
 
   console.log(weatherObject);
 };
