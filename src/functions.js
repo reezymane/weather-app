@@ -18,7 +18,7 @@ async function getWeatherData(city) {
     weatherObject.feelsLike = weatherJSON.main.feels_like;
     weatherObject.weather = weatherJSON.weather[0].main;
     weatherObject.windSpeed = weatherJSON.wind.speed;
-    weatherObject.timezone = weatherJSON.timezone;
+    weatherObject.dateTime = weatherJSON.dt;
     weatherObject.sunrise = weatherJSON.sys.sunrise;
     weatherObject.sunset = weatherJSON.sys.sunset;
 
