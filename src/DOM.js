@@ -185,7 +185,7 @@ const displayData = () => {
     sunriseDiv.appendChild(sunriseTime);
   };
 
-  // Displays sunrise time
+  // Displays sunset time
   const displaySunset = () => {
     const moreInfo = document.querySelector("#moreInfo");
     const sunsetDiv = document.createElement("div");
@@ -200,10 +200,27 @@ const displayData = () => {
       weatherObject.sunset
     ).toLocaleTimeString();
 
-    dataDiv.appendChild(moreInfo);
     moreInfo.appendChild(sunsetDiv);
     sunsetDiv.appendChild(sunsetTitle);
     sunsetDiv.appendChild(sunsetTime);
+  };
+
+  // Displays humidity
+  const displayHumidity = () => {
+    const moreInfo = document.querySelector("#moreInfo");
+    const humidityDiv = document.createElement("div");
+    const humidityTitle = document.createElement("p");
+    const humidityTime = document.createElement("p");
+
+    humidityTitle.classList.add("infoTitle");
+    humidityTime.classList.add("time");
+
+    humidityTitle.textContent = "Humidity:";
+    humidityTime.textContent = `${weatherObject.humidity  }%`;
+
+    moreInfo.appendChild(humidityDiv);
+    humidityDiv.appendChild(humidityTitle);
+    humidityDiv.appendChild(humidityTime);
   };
 
   clearForm();
@@ -215,6 +232,7 @@ const displayData = () => {
   convertUnitButtons();
   displaySunrise();
   displaySunset();
+  displayHumidity();
 
   console.log(weatherObject);
 };
