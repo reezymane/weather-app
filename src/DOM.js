@@ -5,9 +5,14 @@ import Moonclouds from "./img/moonclouds.png";
 import Rain from "./img/rain.png";
 import Snow from "./img/snow.png";
 import Sunclouds from "./img/sunclouds.png";
+import Sunny from "./img/sunny.jpg";
+
 // Runs functions to display all data
 const displayData = () => {
   const dataDiv = document.querySelector("#dataDiv");
+  const currentDT = fromUnixTime(weatherObject.dateTime);
+  const nightStart = fromUnixTime(weatherObject.sunset);
+  const nightEnd = fromUnixTime(weatherObject.sunrise);
 
   // Converts temp units from Kelvin to Farenheit/Celsius
   const fahrenheit = (kelvin) => Math.trunc((kelvin - 273.15) * 1.8 + 32);
@@ -37,12 +42,36 @@ const displayData = () => {
     dataDiv.appendChild(time);
   };
 
+  const setBackground = () => {
+    const containerDiv = document.querySelector("#containerDiv");
+    // If it's day and no rain
+    if (
+      currentDT <= nightStart &&
+      currentDT > nightEnd &&
+      (weatherObject.weather === "Clear" || weatherObject.weather === "Clouds")
+    ) {
+      containerDiv.style.backgroundImage = "url('./img/sunny.jpg')";
+
+      // If it's night and no rain
+    } else if (
+      currentDT >= nightStart &&
+      currentDT < nightEnd &&
+      (weatherObject.weather === "Clear" || weatherObject.weather === "Clouds")
+    ) {
+      containerDiv.style.backgroundImage = "url('./img/night.jpg')";
+
+      // If it's raining
+    } else if (
+      weatherObject.weather === "Thunderstorm" ||
+      weatherObject.weather === "Drizzle" ||
+      weatherObject.weather === "Rain"
+    ) {
+      containerDiv.style.backgroundImage = "url('./img/rainy.jpg')";
+    }
+  };
+
   // Displays appropriate weather pic depending on weather condiditons
   const displayWeatherPic = () => {
-    const currentDT = fromUnixTime(weatherObject.dateTime);
-    const nightStart = fromUnixTime(weatherObject.sunset);
-    const nightEnd = fromUnixTime(weatherObject.sunrise);
-
     // If it's day time and clear
     if (
       currentDT <= nightStart &&
@@ -244,6 +273,7 @@ const displayData = () => {
   };
 
   clearForm();
+  setBackground();
   displayCity();
   displayTime();
   displayWeatherPic();
