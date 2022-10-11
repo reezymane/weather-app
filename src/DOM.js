@@ -216,11 +216,31 @@ const displayData = () => {
     humidityTime.classList.add("time");
 
     humidityTitle.textContent = "Humidity:";
-    humidityTime.textContent = `${weatherObject.humidity  }%`;
+    humidityTime.textContent = `${weatherObject.humidity}%`;
 
     moreInfo.appendChild(humidityDiv);
     humidityDiv.appendChild(humidityTitle);
     humidityDiv.appendChild(humidityTime);
+  };
+
+  // Displays wind speed
+  const displayWindSpeed = () => {
+    const moreInfo = document.querySelector("#moreInfo");
+    const windDiv = document.createElement("div");
+    const windTitle = document.createElement("p");
+    const windSpeed = document.createElement("p");
+
+    const speedMPH = Math.round(weatherObject.windSpeed * 2.237);
+
+    windTitle.classList.add("infoTitle");
+    windSpeed.classList.add("time");
+
+    windTitle.textContent = "Wind Speed:";
+    windSpeed.textContent = `${speedMPH} MPH`;
+
+    moreInfo.appendChild(windDiv);
+    windDiv.appendChild(windTitle);
+    windDiv.appendChild(windSpeed);
   };
 
   clearForm();
@@ -233,8 +253,7 @@ const displayData = () => {
   displaySunrise();
   displaySunset();
   displayHumidity();
-
-  console.log(weatherObject);
+  displayWindSpeed();
 };
 
 export { displayData };
