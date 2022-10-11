@@ -185,6 +185,27 @@ const displayData = () => {
     sunriseDiv.appendChild(sunriseTime);
   };
 
+  // Displays sunrise time
+  const displaySunset = () => {
+    const moreInfo = document.querySelector("#moreInfo");
+    const sunsetDiv = document.createElement("div");
+    const sunsetTitle = document.createElement("p");
+    const sunsetTime = document.createElement("p");
+
+    sunsetTitle.classList.add("infoTitle");
+    sunsetTime.classList.add("time");
+
+    sunsetTitle.textContent = "Sunset:";
+    sunsetTime.textContent = fromUnixTime(
+      weatherObject.sunset
+    ).toLocaleTimeString();
+
+    dataDiv.appendChild(moreInfo);
+    moreInfo.appendChild(sunsetDiv);
+    sunsetDiv.appendChild(sunsetTitle);
+    sunsetDiv.appendChild(sunsetTime);
+  };
+
   clearForm();
   displayCity();
   displayTime();
@@ -193,6 +214,7 @@ const displayData = () => {
   displayFeelsLike();
   convertUnitButtons();
   displaySunrise();
+  displaySunset();
 
   console.log(weatherObject);
 };
