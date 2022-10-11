@@ -128,9 +128,13 @@ const displayData = () => {
     const fahrButton = document.querySelector("#fahrenheitButton");
     const celButton = document.querySelector("#celsiusButton");
     const temp = document.querySelector("#temp");
+    const feelsLike = document.querySelector("#feelsLike");
 
     fahrButton.addEventListener("click", () => {
       temp.textContent = `${fahrenheit(weatherObject.temp)}\u00B0`;
+      feelsLike.textContent = `Feels Like: ${fahrenheit(
+        weatherObject.feelsLike
+      )}\u00B0`;
 
       celButton.style.fontWeight = "normal";
       fahrButton.style.fontWeight = "bold";
@@ -138,6 +142,9 @@ const displayData = () => {
 
     celButton.addEventListener("click", () => {
       temp.textContent = `${celsius(weatherObject.temp)}\u00B0`;
+      feelsLike.textContent = `Feels Like: ${celsius(
+        weatherObject.feelsLike
+      )}\u00B0`;
 
       fahrButton.style.fontWeight = "normal";
       celButton.style.fontWeight = "bold";
@@ -176,7 +183,6 @@ const displayData = () => {
     moreInfo.appendChild(sunriseDiv);
     sunriseDiv.appendChild(sunriseTitle);
     sunriseDiv.appendChild(sunriseTime);
-    console.log(fromUnixTime(weatherObject.sunrise).toLocaleTimeString());
   };
 
   clearForm();
@@ -184,8 +190,8 @@ const displayData = () => {
   displayTime();
   displayWeatherPic();
   displayTemp();
-  convertUnitButtons();
   displayFeelsLike();
+  convertUnitButtons();
   displaySunrise();
 
   console.log(weatherObject);
