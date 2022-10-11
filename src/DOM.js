@@ -100,10 +100,16 @@ const displayData = () => {
     const celsiusButton = document.createElement("button");
     const slash = document.createElement("p");
 
+    fahrenheitButton.setAttribute("id", "fahrenheitButton");
+    celsiusButton.setAttribute("id", "celsiusButton");
+    temp.setAttribute("id", "temp");
+
     temp.textContent = `${fahrenheit(weatherObject.temp)}\u00B0`;
     fahrenheitButton.textContent = "F";
     celsiusButton.textContent = "C";
     slash.textContent = "/";
+
+    fahrenheitButton.style.fontWeight = "bold";
 
     dataDiv.appendChild(tempDiv);
     dataDiv.appendChild(unitDiv);
@@ -113,11 +119,33 @@ const displayData = () => {
     unitDiv.appendChild(celsiusButton);
   };
 
+  // Change temp display when units clicked
+  const convertUnitButtons = () => {
+    const fahrButton = document.querySelector("#fahrenheitButton");
+    const celButton = document.querySelector("#celsiusButton");
+    const temp = document.querySelector("#temp");
+
+    fahrButton.addEventListener("click", () => {
+      temp.textContent = `${fahrenheit(weatherObject.temp)}\u00B0`;
+
+      celButton.style.fontWeight = "normal";
+      fahrButton.style.fontWeight = "bold";
+    });
+
+    celButton.addEventListener("click", () => {
+      temp.textContent = `${celsius(weatherObject.temp)}\u00B0`;
+
+      fahrButton.style.fontWeight = "normal";
+      celButton.style.fontWeight = "bold";
+    });
+  };
+
   clearForm();
   displayCity();
   displayTime();
   displayWeatherPic();
   displayTemp();
+  convertUnitButtons();
 };
 
 export { displayData };
