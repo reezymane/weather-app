@@ -277,6 +277,8 @@ const displayData = () => {
   // Makes main containerDiv appear
   const showContainerDiv = () => {
     const containerDiv = document.querySelector("#containerDiv");
+    containerDiv.style.transitionProperty = "opacity";
+    containerDiv.style.transitionDuration = "4s";
     containerDiv.style.opacity = "1";
   };
 

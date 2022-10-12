@@ -127,8 +127,6 @@ span {
   box-shadow: 0 0 7px white;
 
   opacity: 0;
-  transition-property: opacity;
-  transition-duration: 4s;
 }
 
 /*Styling for weather data container*/
