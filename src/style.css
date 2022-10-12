@@ -1,3 +1,49 @@
+/*Remove margin and padding from all elements*/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  color: white;
+  font-family: Bookman, URW Bookman L, serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+header,
+footer {
+  background-color: rgb(0, 0, 56);
+  height: 150px;
+  display: flex;
+  align-items: center;
+}
+
+header {
+  justify-content: space-around;
+}
+
+#searchBar {
+  display: flex;
+  gap: 15px;
+}
+
+#titleDiv {
+  display: flex;
+  gap: 20px;
+}
+
+footer {
+  justify-content: center;
+}
+
+header img {
+  justify-self: flex-start;
+}
+
 #dataDiv {
   background-color: rgba(92, 227, 227, 0.839);
   width: 200px;
