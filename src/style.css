@@ -27,14 +27,17 @@ footer {
 
 /*Header spacing*/
 header {
-  justify-content: space-around;
+  justify-content: center;
+  gap: 300px;
 }
 
 /*Search bar alignment and spacing*/
 #searchBar {
+  flex: 1;
   display: flex;
   align-items: flex-end;
-  gap: 15px;
+
+  margin-bottom: 5px;
 }
 
 /*Title alignment and spacing*/
@@ -42,6 +45,13 @@ header {
   display: flex;
   align-items: center;
   gap: 20px;
+}
+
+/*Set form height and alignment*/
+#formDiv {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 /*Search bar input sizing, background color and border*/
@@ -57,6 +67,18 @@ header {
   border-left: none;
   border-right: none;
   border-bottom: 2px solid whitesmoke;
+}
+
+/*Set search button size*/
+#searchBar img {
+  height: 25px;
+}
+
+/*Set styling for error message*/
+#errorDiv {
+  font-size: 13px;
+  padding-bottom: 25px;
+  height: 25px;
 }
 
 footer {
