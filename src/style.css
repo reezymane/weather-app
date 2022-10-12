@@ -14,13 +14,14 @@ html {
 body {
   display: flex;
   flex-direction: column;
+  background-color: rgb(12, 12, 76);
 }
 
 /*Set background color, styling and alignment*/
 header,
 footer {
   background-color: rgb(0, 0, 56);
-  height: 150px;
+  height: 125px;
   display: flex;
   align-items: center;
 }
@@ -98,19 +99,47 @@ button:hover {
   cursor: pointer;
 }
 
+/*Alignment and spacing between footer items*/
 footer {
   justify-content: center;
+  gap: 5px;
+  font-style: italic;
 }
 
-header img {
-  justify-self: flex-start;
+span {
+  font-size: 20px;
 }
 
-#dataDiv {
-  background-color: rgba(92, 227, 227, 0.839);
-  width: 200px;
-}
-
+/*Styling for main container*/
 #containerDiv {
+  align-self: center;
+  height: max(calc(100vh - 250px), 500px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: aliceblue;
+  border-radius: 15px;
+
+  box-shadow: 0 0 7px white;
+}
+
+/*Styling for weather data container*/
+#dataDiv {
+  background-color: rgba(0, 0, 0, 0.059);
   width: 500px;
+  height: 400px;
+  border-radius: 15px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 40px 50px;
+}
+
+#dataDiv img {
+  height: 60px;
+  width: 60px;
 }
