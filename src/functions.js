@@ -30,6 +30,9 @@ async function getWeatherData(city) {
     // Display weather data
     displayData();
   } catch (error) {
+    // Removes current error message
+    removeError();
+
     // Displays error message
     displayError();
   }
