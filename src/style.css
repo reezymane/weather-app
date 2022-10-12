@@ -4,16 +4,19 @@
   padding: 0;
 }
 
+/*Set font color and style for entire page*/
 html {
   color: white;
   font-family: Bookman, URW Bookman L, serif;
 }
 
+/*align page vertically*/
 body {
   display: flex;
   flex-direction: column;
 }
 
+/*Set background color, styling and alignment*/
 header,
 footer {
   background-color: rgb(0, 0, 56);
@@ -22,18 +25,38 @@ footer {
   align-items: center;
 }
 
+/*Header spacing*/
 header {
   justify-content: space-around;
 }
 
+/*Search bar alignment and spacing*/
 #searchBar {
   display: flex;
+  align-items: flex-end;
   gap: 15px;
 }
 
+/*Title alignment and spacing*/
 #titleDiv {
   display: flex;
+  align-items: center;
   gap: 20px;
+}
+
+/*Search bar input sizing, background color and border*/
+#city {
+  height: 20px;
+  width: 300px;
+
+  background-color: rgba(255, 255, 255, 0);
+  color: whitesmoke;
+
+  outline: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 2px solid whitesmoke;
 }
 
 footer {
