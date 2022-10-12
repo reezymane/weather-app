@@ -26,7 +26,7 @@ const displayData = () => {
   // Displays city name
   const displayCity = () => {
     const cityName = document.createElement("p");
-
+    cityName.setAttribute("id", "cityName");
     cityName.textContent = weatherObject.name;
     dataDiv.appendChild(cityName);
   };
@@ -34,9 +34,7 @@ const displayData = () => {
   // Converts time from unix and displays
   const displayTime = () => {
     const time = document.createElement("p");
-
     time.classList.add("time");
-
     time.textContent = new Date().toLocaleTimeString();
     dataDiv.appendChild(time);
   };
@@ -134,6 +132,7 @@ const displayData = () => {
     const celsiusButton = document.createElement("button");
     const slash = document.createElement("p");
 
+    tempUnitDiv.setAttribute("id", "tempUnitDiv");
     fahrenheitButton.setAttribute("id", "fahrenheitButton");
     celsiusButton.setAttribute("id", "celsiusButton");
     temp.setAttribute("id", "temp");
