@@ -5,7 +5,7 @@ import { displayData, displayError, removeInfo, removeError } from "./DOM";
 async function getWeatherData(city) {
   try {
     const locationString = city.split(" ").join("+");
-    const locationURL = `http://api.openweathermap.org/data/2.5/weather?q=${locationString}&APPID=f5c0b9e03265d5430f5da6709ce02b0f`;
+    const locationURL = `https://api.openweathermap.org/data/2.5/weather?q=${locationString}&APPID=f5c0b9e03265d5430f5da6709ce02b0f`;
     const response = await fetch(locationURL, { mode: "cors" });
     const weatherJSON = await response.json();
 
