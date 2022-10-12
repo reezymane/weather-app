@@ -120,15 +120,16 @@ span {
   justify-content: center;
   align-items: center;
 
-  background-color: aliceblue;
   border-radius: 15px;
+  background-size: cover;
+  background-repeat: no-repeat;
 
   box-shadow: 0 0 7px white;
 }
 
 /*Styling for weather data container*/
 #dataDiv {
-  background-color: rgba(0, 0, 0, 0.059);
+  background-color: rgba(0, 0, 0, 0.178);
   width: 500px;
   height: 400px;
   border-radius: 15px;
