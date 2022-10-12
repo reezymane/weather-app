@@ -92,6 +92,7 @@ button {
   color: white;
   background-color: rgba(255, 255, 255, 0);
   border: none;
+  font-size: 20px;
 }
 
 /*Change cursor to pointer on hover*/
@@ -139,7 +140,32 @@ span {
   padding: 40px 50px;
 }
 
+/*Size of city name*/
+#cityName {
+  font-size: 40px;
+}
+
+/*weather icon size*/
 #dataDiv img {
-  height: 60px;
-  width: 60px;
+  height: 50px;
+  width: 50px;
+}
+
+/*Align temp and units horizontally*/
+#tempUnitDiv {
+  display: flex;
+}
+
+/*Size of temperature*/
+#temp {
+  font-size: 50px;
+}
+
+/*Align units horizontally and space*/
+#unitDiv {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  font-size: 20px;
+  padding-bottom: 10px;
 }
