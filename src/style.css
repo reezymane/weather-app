@@ -125,6 +125,8 @@ span {
   background-repeat: no-repeat;
 
   box-shadow: 0 0 7px white;
+
+  opacity: 0;
 }
 
 /*Styling for weather data container*/
