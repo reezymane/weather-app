@@ -115,6 +115,7 @@ span {
 #containerDiv {
   align-self: center;
   height: max(calc(100vh - 250px), 500px);
+  width: 800px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -134,10 +135,10 @@ span {
 
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 
-  padding: 40px 50px;
+  padding: 0 50px;
 }
 
 /*Size of city name*/
@@ -173,4 +174,30 @@ span {
 /*Italicize feels like temp*/
 #feelsLike {
   font-style: italic;
+}
+
+/*Align items in moreInfo*/
+#moreInfo {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+}
+
+/*Styling each div in moreInfo*/
+#moreInfo div {
+  width: 25%;
+  padding-left: 15px;
+
+  border-left: 1px solid rgb(156, 156, 156);
+}
+
+/*Remove left border from first info div*/
+#moreInfo div:first-child {
+  border-left: none;
+}
+
+/*Styling for infoTitles*/
+#infoTitle {
+  font-weight: bold;
 }
