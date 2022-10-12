@@ -49,7 +49,7 @@ const displayData = () => {
         weatherObject.weather === "Clouds" ||
         (weatherObject.weatherID > 700 && weatherObject.weatherID < 800))
     ) {
-      containerDiv.style.backgroundImage = "url('../dist/img/sunny.jpg')";
+      containerDiv.style.backgroundImage = "url('./img/sunny.jpg')";
 
       // If it's night and no rain
     } else if (
@@ -57,7 +57,7 @@ const displayData = () => {
       currentDT < nightEnd &&
       (weatherObject.weather === "Clear" || weatherObject.weather === "Clouds")
     ) {
-      containerDiv.style.backgroundImage = "url('../dist/img/night.jpg')";
+      containerDiv.style.backgroundImage = "url('./img/night.jpg')";
 
       // If it's raining
     } else if (
@@ -65,7 +65,7 @@ const displayData = () => {
       weatherObject.weather === "Drizzle" ||
       weatherObject.weather === "Rain"
     ) {
-      containerDiv.style.backgroundImage = "url('../dist/img/rainy.jpg')";
+      containerDiv.style.backgroundImage = "url('./img/rainy.jpg')";
     }
   };
 
