@@ -19,6 +19,7 @@ async function getWeatherData(city) {
     weatherObject.dateTime = weatherJSON.dt;
     weatherObject.sunrise = weatherJSON.sys.sunrise;
     weatherObject.sunset = weatherJSON.sys.sunset;
+    weatherObject.weatherID = weatherJSON.weather[0].id;
 
     // Removes current error message
     removeError();
