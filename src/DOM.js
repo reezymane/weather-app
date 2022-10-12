@@ -133,6 +133,7 @@ const displayData = () => {
     const slash = document.createElement("p");
 
     tempUnitDiv.setAttribute("id", "tempUnitDiv");
+    unitDiv.setAttribute("id", "unitDiv");
     fahrenheitButton.setAttribute("id", "fahrenheitButton");
     celsiusButton.setAttribute("id", "celsiusButton");
     temp.setAttribute("id", "temp");
