@@ -51,7 +51,7 @@ const displayData = () => {
         weatherObject.weather === "Clouds" ||
         (weatherObject.weatherID > 700 && weatherObject.weatherID < 800))
     ) {
-      containerDiv.style.backgroundImage = "url('./img/sunny.jpg')";
+      containerDiv.style.backgroundImage = "url('../dist/img/sunny.jpg')";
 
       // If it's night and no rain
     } else if (
