@@ -47,7 +47,9 @@ const displayData = () => {
     if (
       currentDT <= nightStart &&
       currentDT > nightEnd &&
-      (weatherObject.weather === "Clear" || weatherObject.weather === "Clouds")
+      (weatherObject.weather === "Clear" ||
+        weatherObject.weather === "Clouds" ||
+        (weatherObject.weatherID > 700 && weatherObject.weatherID < 800))
     ) {
       containerDiv.style.backgroundImage = "url('./img/sunny.jpg')";
 
@@ -81,11 +83,12 @@ const displayData = () => {
       mySunclouds.src = Sunclouds;
       dataDiv.appendChild(mySunclouds);
 
-      // If it's day time and cloudy
+      // If it's day time and cloudy/atmosphere
     } else if (
       currentDT <= nightStart &&
       currentDT > nightEnd &&
-      weatherObject.weather === "Clouds"
+      (weatherObject.weather === "Clouds" ||
+        (weatherObject.weatherID > 700 && weatherObject.weatherID < 800))
     ) {
       const myCloudy = new Image();
       myCloudy.src = Cloudy;
