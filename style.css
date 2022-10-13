@@ -1,0 +1,206 @@
+/*Remove margin and padding from all elements*/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/*Set font color and style for entire page*/
+html {
+  color: white;
+  font-family: Bookman, URW Bookman L, serif;
+}
+
+/*align page vertically*/
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(12, 12, 76);
+}
+
+/*Set background color, styling and alignment*/
+header,
+footer {
+  background-color: rgb(0, 0, 56);
+  height: 125px;
+  display: flex;
+  align-items: center;
+}
+
+/*Header spacing*/
+header {
+  justify-content: center;
+  gap: 300px;
+}
+
+/*Search bar alignment and spacing*/
+#searchBar {
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+
+  margin-bottom: 5px;
+}
+
+/*Title alignment and spacing*/
+#titleDiv {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/*Set form height and alignment*/
+#formDiv {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/*Search bar input sizing, background color and border*/
+#city {
+  height: 20px;
+  width: 300px;
+
+  background-color: rgba(255, 255, 255, 0);
+  color: whitesmoke;
+
+  outline: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 2px solid whitesmoke;
+}
+
+/*Set search button size*/
+#searchBar img {
+  height: 25px;
+}
+
+/*Set styling for error message*/
+#errorDiv {
+  font-size: 13px;
+  padding-bottom: 25px;
+  height: 25px;
+  width: 400px;
+}
+
+/*Button background, font color, and border*/
+button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: white;
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+  font-size: 20px;
+}
+
+/*Change cursor to pointer on hover*/
+button:hover {
+  cursor: pointer;
+}
+
+/*Alignment and spacing between footer items*/
+footer {
+  justify-content: center;
+  gap: 5px;
+  font-style: italic;
+}
+
+span {
+  font-size: 20px;
+}
+
+/*Styling for main container*/
+#containerDiv {
+  align-self: center;
+  height: max(calc(100vh - 250px), 500px);
+  width: 800px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 15px;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  box-shadow: 0 0 7px white;
+
+  opacity: 0;
+}
+
+/*Styling for weather data container*/
+#dataDiv {
+  background-color: rgba(0, 0, 0, 0.178);
+  width: 500px;
+  height: 400px;
+  border-radius: 15px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+  padding: 0 50px;
+}
+
+/*Size of city name*/
+#cityName {
+  font-size: 40px;
+}
+
+/*weather icon size*/
+#dataDiv img {
+  height: 50px;
+  width: 50px;
+}
+
+/*Align temp and units horizontally*/
+#tempUnitDiv {
+  display: flex;
+}
+
+/*Size of temperature*/
+#temp {
+  font-size: 50px;
+}
+
+/*Align units horizontally and space*/
+#unitDiv {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  font-size: 20px;
+  padding-bottom: 10px;
+}
+
+/*Italicize feels like temp*/
+#feelsLike {
+  font-style: italic;
+}
+
+/*Align items in moreInfo*/
+#moreInfo {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+}
+
+/*Styling each div in moreInfo*/
+#moreInfo div {
+  width: 25%;
+  padding-left: 15px;
+
+  border-left: 1px solid rgb(156, 156, 156);
+}
+
+/*Remove left border from first info div*/
+#moreInfo div:first-child {
+  border-left: none;
+}
+
+/*Styling for infoTitles*/
+#infoTitle {
+  font-weight: bold;
+}
