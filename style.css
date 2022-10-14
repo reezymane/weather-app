@@ -15,6 +15,7 @@ body {
   display: flex;
   flex-direction: column;
   background-color: rgb(12, 12, 76);
+  min-width: 1000px;
 }
 
 /*Set background color, styling and alignment*/
